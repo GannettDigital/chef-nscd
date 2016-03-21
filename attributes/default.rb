@@ -2,7 +2,7 @@
 # Cookbook Name:: nscd
 # Attributes:: default
 #
-# Copyright 2009-2013, Opscode, Inc.
+# Copyright 2009-2016, Chef Software, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@
 
 # Possible values: nscd, unscd, gnscd
 default['nscd']['package'] = 'nscd'
+default['nscd']['version'] = nil
 
 # nscd.conf parameters
 default['nscd']['logfile'] = '/var/log/nscd'
@@ -32,7 +33,7 @@ default['nscd']['paranoia'] = 'no'
 default['nscd']['restart_interval'] = 3600
 
 # list of databases which to configure
-default['nscd']['databases'] = %w[passwd group hosts services netgroup]
+default['nscd']['databases'] = %w(passwd group hosts services netgroup)
 
 # passwd database
 default['nscd']['passwd']['enable_cache'] = 'yes'

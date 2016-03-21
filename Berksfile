@@ -1,6 +1,9 @@
-site :opscode
+source 'https://supermarket.chef.io'
+
 metadata
 
 group :integration do
-  cookbook 'apt', '~> 2.0'
+  cookbook 'yum'
+  cookbook 'apt'
+  cookbook 'test', path: './test/fixtures/cookbooks/test'
 end
